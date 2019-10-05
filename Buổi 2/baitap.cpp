@@ -1,17 +1,33 @@
 #include <stdio.h>
 int main()
 {
-	float a, b, c;
-    printf("\nNhap 3 so a, b, c: ");
-    scanf("%f%f%f", &a, &b, &c);
-    float maxValue = a;
- 
-    if(b > maxValue){
-        maxValue = b;
-    }
- 
-    if(c > maxValue){
-        maxValue = c;
-    }
+	int a,b,c;
+	printf("Nhap so thu nhat:\n");
+	scanf("%d",&a);
+	printf("Nhap so thu hai:\n");
+	scanf("%d",&b);
+	printf("Nhap so thu ba:\n");
+	scanf("%d",&c);
+	if(a>b){
+		if(b>c){
+			printf("Max: %d - Min:%d\n",a,c );
+		}else{
+			if(a>c){
+				printf("Max: %d - Min:%d\n",a,b );
+			}else{
+				printf("Max: %d - Min:%d\n",c,b );
+			}
+		}
+	}else{
+		if(a>c){
+			printf("Max: %d - Min:%d\n",b,c );
+		}else{
+			if(b>c){
+				printf("Max: %d - Min:%d\n",b,a );
+			}else{
+				printf("Max: %d - Min:%d\n",c,a );
+			}
+		}
+	}
 	return 0;
 }

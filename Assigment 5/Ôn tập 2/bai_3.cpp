@@ -3,11 +3,19 @@ int main()
 {
 	int S=0;
 	int i=1;
-	for(int dem=0;dem<100;dem++)
+	for (int i = 0, j=0; i < 3; ++j)
 	{
-		S+=i;
-		i+=2;
+		if(j%2!=0)/*chia lấy phần dư và khác 0*/{
+			S += j/*tương đương S = S + j*/;
+			i++;
+		}
 	}
-	printf("%d",S);
+	/*
+	for (int i = 0, j = 1; i < 100; ++i, j+=2)
+	{
+		S+=j;
+	}
+	*/
+	printf("Tong 100 so le: %d\n",S );
 	return 0;
 }

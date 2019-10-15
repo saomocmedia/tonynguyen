@@ -1,53 +1,77 @@
-#include <stdio.h>//Tạo menu lựa chọn ( của nhà hàng) để khách hàng chọn chức năng, sau khi chọn xong quay lại menu để chọn tiếp.
-int main()
-{
-	int lc;
-	int lc2,lc3,lc4,lc5;
-	printf("******************************************NHAP LUA CHON CUA BAN**********************************************\n");
-	printf("1. Goi mon ga \n");
-	printf("2. Goi do uong \n");
-	printf("3. Goi trang mieng \n");
-	printf("4. QUIT \n");
-	scanf("%d",&lc);
-	switch(lc)
-	{
-		case 1: printf("******Cac mon ga la: *********\n"); 
-				printf("1.Ga rang \n2.Ga luoc\n3.Ga quay\n4.Quit\n");
-				do{
-					printf("Nhap lua chon cua ban: \n");
-					scanf("%d",&lc2);
-					if(lc2 ==1 )         printf("Ban chon ga rang.\n");
-					else if(lc2 == 2)    printf("Ban chon ga luoc\n");
-					else if(lc2 == 3)    printf("Ban chon ga quay\n");
-					else 			     printf("Ban chon thoat.\n");
+#include <stdio.h>//tạo menu nhà hàng
+int main(){
+	int n;
+	bool cs = true;
+	while(cs){
+		do{
+			printf("Chon chuc nang:\n");
+			printf("1. Chon mon an\n");
+			printf("2. Chon do uong\n");
+			printf("3. thanh toan\n");
+			printf("4. thoat\n");
+			scanf("%d",&n);
+		}while(n<1 || n>4);
+
+		switch(n){
+			case 1: {
+				int choose;
+				bool cs1 = true;
+				while(cs1){
+					do{
+						printf("Chon mon an:\n");
+						printf("1. Bo\n");
+						printf("2. Ga\n");
+						printf("3. Vit\n");
+						printf("4. Quay lai menu\n");
+						scanf("%d",&choose);
+					}while(choose < 1 || choose > 4);
+					if(choose == 1){
+						printf("Chon con bo\n");
+					}else if(choose == 2){
+						printf("Chon mon Ga\n");
+					}else if(choose == 3){
+						printf("Chon mon Vit\n");
+					}else if(choose==4){
+						cs1 = false;	
+					}
 				}
-				while(lc2 >=1 && lc2 < 4);
-				break;	
-		case 2: printf("******Cac loai do uong la: *********\n"); 
-				printf("1.COCACOLA \n2.PEPSI\n3.SEVEN UP\n4.Quit\n");
-				do{
-					printf("Nhap lua chon cua ban: \n");
-					scanf("%d",&lc3);
-					if(lc3 ==1 ) printf("Ban chon COCACOLA.\n");
-					else if(lc3 == 2) printf("Ban chon PEPSI\n");
-					else if(lc3 == 3) printf("Ban chon SEVEN UP\n");
-					else printf("Ban chon thoat.\n");
-				}
-				while(lc3 >=1 && lc3 < 4);
 				break;
-		case 3: printf("******Cac mon trang mieng la: *********\n"); 
-				printf("1.Dua + Buoi \n2.Tao + Xoai\n3.Hoa qua cac loai\n4.Quit\n");
-				do{
-					printf("Nhap lua chon cua ban: \n");
-					scanf("%d",&lc4);
-					if(lc4 ==1 ) printf("Ban chon Dua + Buoi.\n");
-					else if(lc4 == 2) printf("Ban chon Tao + Xoai\n");
-					else if(lc4 == 3) printf("Ban chon Hoa qua cac loai\n");
-					else printf("Ban chon thoat.\n");
+			}
+				
+			case 2: {
+				int choose2;
+				bool cs2 = true;
+				while(cs2){
+					do{
+						printf("Chon do uong:\n");
+						printf("1. Bia\n");
+						printf("2. Nuoc ngot\n");
+						printf("3. Sinh to\n");
+						printf("4. Quay lai menu\n");
+						scanf("%d",&choose2);
+					}while(choose2 < 1 || choose2 > 4);
+					if(choose2 == 1){
+						printf("Chon bia\n");
+					}else if(choose2 == 2){
+						printf("Chon nuoc ngot\n");
+					}else if(choose2 == 3){
+						printf("Chon sinh to\n");
+					}else if(choose2==4){
+						cs2 = false;	
+					}
 				}
-				while(lc4 >=1 && lc4 < 4);
 				break;
-		case 4: break;
+			}
+						
+			case 3: {
+				printf("Tinh tien: 30000\n");break;
+			}
+
+			case 4:{
+				cs = false;break;		
+			}
+		}
 	}
+
 	return 0;
 }

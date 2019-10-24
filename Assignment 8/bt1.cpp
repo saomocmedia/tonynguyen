@@ -1,54 +1,29 @@
-#include <stdio.h>
+#include <stdio.h>//Nhập vào 1 mảng n các số và nhập vào 1 số x. Tìm xem x có nằm trong mảng không và có thì vị trí gần nhất là vị trí nào.
 int main (){
-	int i,j,temp;
 	int n;
 	printf ("Nhap n=\n");
 	scanf ("%d",&n);
+	int ary[n],x;
 	int ary[n];
 	for (int i =0 ;i < n;i++)
 	{
-		printf("Nhap phan tu ary[%d]\n",i);
+		printf("Nhap phan tu ary[%d] = \n",i);
 		scanf("%d",&ary[i]);
 	}
-	for ( int i = 1; i < n; i++)
+	printf("Nhap x = \n");
+	scanf("%d",&x);
+	int i = 0;//meo khi dung bien chayj thi cho ra ngoai vong lap for
+	for ( i = 0; i < n; ++i)
 	{
-		j = i -1;
-		temp = ary[i];
-		while((j >= 0) && (temp <ary[j]))
-		{
-			ary[j+1]=ary[j];
-			j--;
-		}
-		ary[j+1]=temp;
-	}
-	for ( int j = 0;j < n;j++);
-	{
-		printf ("%d",&ary[j]);
-	}
-	int x;
-	printf ("Nhap x: \n");
-	scanf ("%d",&x);
-	int mid;
-	int low;
-	int high;
-	int searchvalue;
-	int flag = 0;
-	while (low <= high)
-	{
-		int mid = low + (high - low)/2;
-		if (searchvalue == ary[mid])
-		{
-			flag = 1;
-			printf ("Vi tri gan nhat cua x la %d\n",mid);
+		if(x == ary[i]){
+			printf("%d nam trong mang vua nhap\n",x );
+			printf("Tai vi tri gan nhat la: %d\n",i );
 			break;
-		}else if(searchvalue < ary[mid]){
-			high = mid - 1;
-		}else if(searchvalue > ary[mid]){
-			low = mid + 1;
 		}
 	}
-	if(flag = 0){
-		printf ("x khong thuoc day tren\n");
+	if(i >= n){
+		printf("%d khong nam trong mang\n",x );
 	}
+
 	return 0;
 }

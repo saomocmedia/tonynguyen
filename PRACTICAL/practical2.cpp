@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
 	interest=interest/100;
 	for (int i = 0; i < year; ++i)
 	{
-		rate=sum*year;
+		rate=sum*interest;
 		sum=sum+rate;
 		printf("%d\t %f\t %f\n",i+1,rate,sum);
 	}
